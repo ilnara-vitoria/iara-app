@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { SVGProps } from "react";
+import { StatsCarousel } from "./components/landing/StatsCarousel";
 
 const steps = [
   {
@@ -190,7 +191,7 @@ export default function Home() {
             aria-label="Iara"
           >
             <Image
-              src="/figma-assets/image-6.png"
+              src="/figma-assets/logonova.jpeg"
               alt="Iara"
               width={100}
               height={43}
@@ -300,6 +301,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <StatsCarousel />
 
       <section className="relative flex min-h-[550px] items-center justify-center overflow-hidden px-8 py-24 text-center text-white">
         <Image
