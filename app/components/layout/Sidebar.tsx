@@ -69,7 +69,11 @@ function NavIcon({ name }: { name: IconName }) {
 }
 
 const navItems = [
-  { href: "/perfil", label: "Meu Perfil", icon: "profile" as IconName },
+  {
+    href: "/dashboard/candidata",
+    label: "Meu Perfil",
+    icon: "profile" as IconName,
+  },
   { href: "/empregos", label: "Vagas", icon: "vagas" as IconName },
   { href: "/testes", label: "Testes e IA", icon: "testes" as IconName },
   { href: "/comunidade", label: "Comunidade", icon: "comunidade" as IconName },
@@ -83,14 +87,18 @@ export function Sidebar() {
     <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-gray-100 shadow-sm flex flex-col z-20">
       {/* Logo */}
       <div className="px-6 py-5 border-b border-gray-100 flex items-center gap-3">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2" aria-label="Iara">
           <Image
-            src="/figma-assets/logonova.jpeg"
-            alt="Iara"
-            width={80}
-            height={34}
-            className="h-auto w-[80px]"
+            src="/figma-assets/image-7.png"
+            alt=""
+            width={28}
+            height={29}
+            className="shrink-0 object-contain"
+            aria-hidden="true"
           />
+          <span className="text-lg font-black tracking-[0.18em] text-[#8A2F86]">
+            IARA
+          </span>
         </Link>
         <span className="text-xs font-bold text-[#8b3889] uppercase tracking-wider bg-[#fbf4fb] px-2 py-1 rounded-full border border-[#ecdfee]">
           Candidata
