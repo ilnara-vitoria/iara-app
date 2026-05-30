@@ -96,11 +96,11 @@ export function Sidebar() {
             className="shrink-0 object-contain"
             aria-hidden="true"
           />
-          <span className="text-lg font-black tracking-[0.18em] text-[#8A2F86]">
+          <span className="text-lg font-black tracking-[0.18em] text-[#3E0014]">
             IARA
           </span>
         </Link>
-        <span className="text-xs font-bold text-[#8b3889] uppercase tracking-wider bg-[#fbf4fb] px-2 py-1 rounded-full border border-[#ecdfee]">
+        <span className="text-xs font-bold text-[#5B002C] uppercase tracking-wider bg-[#FFFBFC] px-2 py-1 rounded-full border border-[#EAD9EE]">
           Candidata
         </span>
       </div>

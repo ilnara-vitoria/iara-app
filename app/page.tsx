@@ -2,6 +2,13 @@ import Image from "next/image";
 import type { SVGProps } from "react";
 import { StatsCarousel } from "./components/landing/StatsCarousel";
 
+// ── Paleta do mockup ─────────────────────────────────────────────────────────
+// #FFFBFC  fundo creme
+// #3E0014  vinho escuro (headings, texto principal)
+// #5B002C  vinho médio (gradientes, hover)
+// #AC1634  crimson (ação, acentos)
+// #8C1030  hover do crimson
+
 const steps = [
   {
     icon: "user",
@@ -182,8 +189,9 @@ function Icon({
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-[#421657]">
-      <header className="sticky top-0 z-30 h-20 border-b border-[#eadfec] bg-white/95 shadow-[0_1px_5px_rgba(66,22,87,0.12)] backdrop-blur">
+    <main className="min-h-screen bg-white text-[#3E0014]">
+      {/* ── Header ── */}
+      <header className="sticky top-0 z-30 h-20 border-b border-[#EAD9EE] bg-white/95 shadow-[0_1px_5px_rgba(62,0,20,0.10)] backdrop-blur">
         <div className="mx-auto flex h-full max-w-[1280px] items-center justify-between px-4 sm:px-8">
           <a
             href="#topo"
@@ -200,7 +208,7 @@ export default function Home() {
             />
           </a>
 
-          <nav className="hidden items-center gap-9 text-[13px] font-bold text-[#3f4f6b] lg:flex">
+          <nav className="hidden items-center gap-9 text-[13px] font-bold text-[#5B002C] lg:flex">
             <a href="#como-funciona">Como funciona</a>
             <a href="#candidatas">Para candidatas</a>
             <a href="#empresas">Para empresas</a>
@@ -208,12 +216,12 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-4 text-[13px] font-extrabold">
-            <a href="#entrar" className="hidden text-[#421657] sm:inline-flex">
+            <a href="/login" className="hidden text-[#3E0014] sm:inline-flex">
               Entrar
             </a>
             <a
-              href="#candidatas"
-              className="inline-flex h-10 items-center justify-center rounded-xl bg-[#d64991] px-5 text-white shadow-[0_8px_18px_rgba(214,73,145,0.32)] transition hover:bg-[#c83b83]"
+              href="/cadastro"
+              className="inline-flex h-10 items-center justify-center rounded-xl bg-[#AC1634] px-5 text-white shadow-[0_8px_18px_rgba(172,22,52,0.32)] transition hover:bg-[#8C1030]"
             >
               Criar conta grátis
             </a>
@@ -221,22 +229,23 @@ export default function Home() {
         </div>
       </header>
 
+      {/* ── Hero ── */}
       <section
         id="topo"
         className="mx-auto grid max-w-[1280px] items-center gap-12 px-8 pb-16 pt-0 lg:min-h-[840px] lg:grid-cols-[1fr_575px] lg:gap-14"
       >
         <div className="max-w-[620px] pt-10 lg:mt-0 lg:pt-0">
-          <div className="relative top-3 mb-9 inline-flex h-[38px] items-center gap-2 rounded-full border border-[#ecdfee] bg-[#fbf4fb] px-4 text-sm font-semibold text-[#8b3889]">
+          <div className="relative top-3 mb-9 inline-flex h-[38px] items-center gap-2 rounded-full border border-[#EAD9EE] bg-[#FFFBFC] px-4 text-sm font-semibold text-[#5B002C]">
             <Icon name="sparkle" className="h-4 w-4" />
             Exclusivo para mulheres
           </div>
 
-          <h1 className="max-w-[610px] text-[44px] font-black leading-[1.1] text-[#421657] sm:text-[60px] lg:text-[62px]">
+          <h1 className="max-w-[610px] text-[44px] font-black leading-[1.1] text-[#3E0014] sm:text-[60px] lg:text-[62px]">
             Oportunidades de trabalho pensadas{" "}
-            <span className="block text-[#d64991]">para você</span>
+            <span className="block text-[#AC1634]">para você</span>
           </h1>
 
-          <p className="mt-6 max-w-[560px] text-lg leading-8 text-[#425572]">
+          <p className="mt-6 max-w-[560px] text-lg leading-8 text-[#5B002C]/70">
             Nossa plataforma conecta você a oportunidades de acordo com seu
             perfil.
           </p>
@@ -244,21 +253,21 @@ export default function Home() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#candidatas"
-              className="inline-flex h-[62px] items-center justify-center gap-3 rounded-[13px] bg-[#d64991] px-8 text-lg font-extrabold text-white shadow-[0_10px_22px_rgba(214,73,145,0.28)] transition hover:bg-[#c83b83]"
+              className="inline-flex h-[62px] items-center justify-center gap-3 rounded-[13px] bg-[#AC1634] px-8 text-lg font-extrabold text-white shadow-[0_10px_22px_rgba(172,22,52,0.28)] transition hover:bg-[#8C1030]"
             >
               Buscar vagas agora
               <Icon name="arrow" className="h-5 w-5" />
             </a>
             <a
               href="#como-funciona"
-              className="inline-flex h-[62px] items-center justify-center rounded-[13px] border border-[#dfe5ef] bg-white px-8 text-lg font-extrabold text-[#421657] shadow-[0_3px_9px_rgba(15,23,42,0.08)] transition hover:bg-[#fbf8fc]"
+              className="inline-flex h-[62px] items-center justify-center rounded-[13px] border border-[#EAD9EE] bg-white px-8 text-lg font-extrabold text-[#3E0014] shadow-[0_3px_9px_rgba(62,0,20,0.08)] transition hover:bg-[#FFFBFC]"
             >
               Saber mais
             </a>
           </div>
         </div>
 
-        <div className="relative min-h-[620px] overflow-hidden rounded-[15px] border-[5px] border-white bg-[#421657] shadow-[0_22px_44px_rgba(40,13,54,0.16)] lg:h-[758px]">
+        <div className="relative min-h-[620px] overflow-hidden rounded-[15px] border-[5px] border-white bg-[#3E0014] shadow-[0_22px_44px_rgba(62,0,20,0.20)] lg:h-[758px]">
           <Image
             src="/figma-assets/image-3.png"
             alt="Engenheira mecânica trabalhando"
@@ -267,14 +276,14 @@ export default function Home() {
             sizes="(min-width: 1024px) 566px, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#44195c]/90 via-[#44195c]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#3E0014]/90 via-[#5B002C]/20 to-transparent" />
 
-          <div className="absolute left-8 top-8 inline-flex h-12 items-center gap-3 rounded-[14px] bg-white px-5 text-base font-extrabold text-[#421657] shadow-[0_12px_28px_rgba(38,12,50,0.18)]">
+          <div className="absolute left-8 top-8 inline-flex h-12 items-center gap-3 rounded-[14px] bg-white px-5 text-base font-extrabold text-[#3E0014] shadow-[0_12px_28px_rgba(62,0,20,0.18)]">
             <span className="h-3 w-3 rounded-full bg-[#68d8a4]" />
             Contratada via Iara
           </div>
 
-          <div className="absolute inset-x-8 bottom-8 rounded-[14px] border border-white/25 bg-white/20 p-6 text-white shadow-[0_18px_35px_rgba(22,8,34,0.28)] backdrop-blur-xl">
+          <div className="absolute inset-x-8 bottom-8 rounded-[14px] border border-white/25 bg-white/20 p-6 text-white shadow-[0_18px_35px_rgba(62,0,20,0.28)] backdrop-blur-xl">
             <div className="flex items-start justify-between gap-5">
               <div>
                 <h2 className="text-2xl font-black">Juliana Costa</h2>
@@ -282,16 +291,16 @@ export default function Home() {
                   Engenheira Mecânica
                 </p>
               </div>
-              <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl border border-white/25 bg-[#d64991]/70 text-center shadow-inner">
+              <div className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl border border-white/25 bg-[#AC1634]/70 text-center shadow-inner">
                 <strong className="text-[27px] leading-none">98%</strong>
                 <span className="mt-1 text-xs font-black uppercase">Match</span>
               </div>
             </div>
 
-            <div className="mt-5 flex gap-4 rounded-[11px] bg-[#54206d]/88 px-5 py-4 text-base font-extrabold leading-7">
+            <div className="mt-5 flex gap-4 rounded-[11px] bg-[#5B002C]/80 px-5 py-4 text-base font-extrabold leading-7">
               <Icon
                 name="bolt"
-                className="mt-1 h-6 w-6 shrink-0 text-[#d64991]"
+                className="mt-1 h-6 w-6 shrink-0 text-[#AC1634]"
               />
               <p>
                 Conhecimento em softwares de CAD/CAE. Capacidade de resolução
@@ -304,6 +313,7 @@ export default function Home() {
 
       <StatsCarousel />
 
+      {/* ── CTA Banner ── */}
       <section className="relative flex min-h-[550px] items-center justify-center overflow-hidden px-8 py-24 text-center text-white">
         <Image
           src="/figma-assets/transformation-bg.jpg"
@@ -312,8 +322,8 @@ export default function Home() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#d64991]/62 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#421657]/25 via-[#d64991]/20 to-[#d64991]/28" />
+        <div className="absolute inset-0 bg-[#AC1634]/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3E0014]/25 via-[#AC1634]/20 to-[#5B002C]/28" />
         <div className="relative z-10 mx-auto max-w-[760px]">
           <h2 className="text-[38px] font-black leading-[1.12] sm:text-[47px]">
             O momento de transformar sua vida é agora
@@ -326,7 +336,7 @@ export default function Home() {
           <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
             <a
               href="#candidatas"
-              className="inline-flex h-[62px] items-center justify-center rounded-xl bg-white px-8 text-lg font-extrabold text-[#421657]"
+              className="inline-flex h-[62px] items-center justify-center rounded-xl bg-white px-8 text-lg font-extrabold text-[#3E0014]"
             >
               Cadastrar currículo
             </a>
@@ -340,31 +350,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Como funciona ── */}
       <section
         id="como-funciona"
-        className="bg-[#fcf9fd] px-8 pb-[42px] pt-[98px] text-center"
+        className="bg-[#FFFBFC] px-8 pb-[42px] pt-[98px] text-center"
       >
         <div className="mx-auto max-w-[1216px]">
-          <h2 className="text-[30px] font-black text-[#421657]">
+          <h2 className="text-[30px] font-black text-[#3E0014]">
             Como a Iara funciona?
           </h2>
-          <p className="mt-3 text-base text-[#4c5d78]">
+          <p className="mt-3 text-base text-[#5B002C]/70">
             Sem complicação e sem perder tempo. Veja como você começa hoje
           </p>
 
           <div className="relative mt-[64px] grid gap-14 lg:grid-cols-3 lg:gap-10">
-            <div className="absolute left-[16%] right-[16%] top-12 hidden h-px bg-[#e5dcea] lg:block" />
+            <div className="absolute left-[16%] right-[16%] top-12 hidden h-px bg-[#EAD9EE] lg:block" />
             {steps.map((step) => (
               <article key={step.title} className="relative z-10">
-                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[14px] border border-[#ecdfee] bg-white text-[#d64991] shadow-[0_8px_18px_rgba(15,23,42,0.12)]">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-[10px] bg-[#fcf9fd]">
+                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-[14px] border border-[#EAD9EE] bg-white text-[#AC1634] shadow-[0_8px_18px_rgba(62,0,20,0.10)]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-[10px] bg-[#FFFBFC]">
                     <Icon name={step.icon} className="h-7 w-7" />
                   </div>
                 </div>
-                <h3 className="mt-8 text-xl font-black text-[#421657]">
+                <h3 className="mt-8 text-xl font-black text-[#3E0014]">
                   {step.title}
                 </h3>
-                <p className="mx-auto mt-4 max-w-[370px] text-base leading-7 text-[#4c5d78]">
+                <p className="mx-auto mt-4 max-w-[370px] text-base leading-7 text-[#5B002C]/70">
                   {step.text}
                 </p>
               </article>
@@ -373,24 +384,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Para candidatas / empresas ── */}
       <section className="px-8 pb-[106px] pt-[72px]">
         <div className="mx-auto grid max-w-[1216px] gap-8 lg:grid-cols-2">
           <article
             id="candidatas"
-            className="rounded-[20px] border border-[#ead9ee] bg-[#fffcff] p-12 shadow-[0_3px_10px_rgba(48,18,62,0.08)]"
+            className="rounded-[20px] border border-[#EAD9EE] bg-[#FFFBFC] p-12 shadow-[0_3px_10px_rgba(62,0,20,0.06)]"
           >
-            <span className="inline-flex h-9 items-center rounded-full border border-[#e8dce9] bg-white px-5 text-sm font-bold text-[#8a3286] shadow-[0_2px_7px_rgba(15,23,42,0.08)]">
+            <span className="inline-flex h-9 items-center rounded-full border border-[#EAD9EE] bg-white px-5 text-sm font-bold text-[#5B002C] shadow-[0_2px_7px_rgba(62,0,20,0.06)]">
               Para Candidatas
             </span>
-            <h2 className="mt-8 max-w-[480px] text-[31px] font-black leading-[1.14] text-[#421657]">
+            <h2 className="mt-8 max-w-[480px] text-[31px] font-black leading-[1.14] text-[#3E0014]">
               Impulsione sua jornada profissional
             </h2>
-            <ul className="mt-7 space-y-4 text-base font-bold text-[#394b67]">
+            <ul className="mt-7 space-y-4 text-base font-bold text-[#3E0014]">
               {candidateBenefits.map((benefit) => (
                 <li key={benefit} className="flex items-center gap-3">
                   <Icon
                     name="check"
-                    className="h-5 w-5 shrink-0 text-[#d64991]"
+                    className="h-5 w-5 shrink-0 text-[#AC1634]"
                   />
                   {benefit}
                 </li>
@@ -398,7 +410,7 @@ export default function Home() {
             </ul>
             <a
               href="#entrar"
-              className="mt-9 inline-flex items-center gap-3 text-base font-extrabold text-[#d64991]"
+              className="mt-9 inline-flex items-center gap-3 text-base font-extrabold text-[#AC1634]"
             >
               Acessar painel
               <Icon name="arrow" className="h-4 w-4" />
@@ -407,9 +419,9 @@ export default function Home() {
 
           <article
             id="empresas"
-            className="rounded-[20px] bg-gradient-to-br from-[#511970] to-[#792584] p-12 text-white shadow-[0_13px_30px_rgba(48,18,62,0.24)]"
+            className="rounded-[20px] bg-gradient-to-br from-[#3E0014] to-[#5B002C] p-12 text-white shadow-[0_13px_30px_rgba(62,0,20,0.24)]"
           >
-            <span className="inline-flex h-9 items-center rounded-full border border-white/25 bg-white/10 px-5 text-sm font-bold text-white shadow-[0_2px_7px_rgba(15,23,42,0.08)]">
+            <span className="inline-flex h-9 items-center rounded-full border border-white/25 bg-white/10 px-5 text-sm font-bold text-white shadow-[0_2px_7px_rgba(62,0,20,0.08)]">
               Para Empresas
             </span>
             <h2 className="mt-8 max-w-[500px] text-[31px] font-black leading-[1.14]">
@@ -420,7 +432,7 @@ export default function Home() {
                 <li key={benefit} className="flex items-center gap-3">
                   <Icon
                     name="check"
-                    className="h-5 w-5 shrink-0 text-[#d64991]"
+                    className="h-5 w-5 shrink-0 text-[#AC1634]"
                   />
                   {benefit}
                 </li>
@@ -437,13 +449,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Tecnologia IA ── */}
       <section
         id="tecnologia"
-        className="bg-gradient-to-br from-[#421657] via-[#56206a] to-[#421657] px-8 pb-[60px] pt-[106px] text-white"
+        className="bg-gradient-to-br from-[#3E0014] via-[#5B002C] to-[#3E0014] px-8 pb-[60px] pt-[106px] text-white"
       >
         <div className="mx-auto max-w-[1216px] text-center">
           <h2 className="text-[36px] font-black leading-tight">
-            IA que entende <span className="text-[#e56ca5]">além do</span>{" "}
+            IA que entende <span className="text-[#E77291]">além do</span>{" "}
             currículo
           </h2>
           <p className="mx-auto mt-6 max-w-[760px] text-lg leading-8 text-white/86">
@@ -458,7 +471,7 @@ export default function Home() {
                 key={card.title}
                 className="rounded-[14px] border border-white/12 bg-white/[0.06] p-6"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[13px] border border-white/10 bg-[#d64991]/35">
+                <div className="flex h-14 w-14 items-center justify-center rounded-[13px] border border-white/10 bg-[#AC1634]/35">
                   <Icon name={card.icon} className="h-8 w-8" />
                 </div>
                 <h3 className="mt-8 text-xl font-black">{card.title}</h3>
@@ -471,12 +484,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#fcf9fd] px-8 py-[104px]">
+      {/* ── Por que a Iara é diferente ── */}
+      <section className="bg-[#FFFBFC] px-8 py-[104px]">
         <div className="mx-auto max-w-[1216px]">
-          <h2 className="text-[31px] font-black text-[#421657]">
+          <h2 className="text-[31px] font-black text-[#3E0014]">
             Por que a Iara é diferente?
           </h2>
-          <p className="mt-4 max-w-[670px] text-base leading-7 text-[#4c5d78]">
+          <p className="mt-4 max-w-[670px] text-base leading-7 text-[#5B002C]/70">
             Construída por mulheres, para mulheres. Entendemos as nuances e
             desafios do mercado de trabalho atual.
           </p>
@@ -485,12 +499,12 @@ export default function Home() {
             {differences.map((item) => (
               <article
                 key={item.title}
-                className="flex min-h-[120px] flex-col items-center justify-center rounded-[14px] border border-[#eee5f1] bg-white/55 p-5 text-center shadow-[0_2px_7px_rgba(15,23,42,0.08)]"
+                className="flex min-h-[120px] flex-col items-center justify-center rounded-[14px] border border-[#EAD9EE] bg-white/55 p-5 text-center shadow-[0_2px_7px_rgba(62,0,20,0.06)]"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-[11px] border border-[#eadfec] bg-white text-[#d64991]">
+                <div className="flex h-16 w-16 items-center justify-center rounded-[11px] border border-[#EAD9EE] bg-white text-[#AC1634]">
                   <Icon name={item.icon} className="h-7 w-7" />
                 </div>
-                <h3 className="mt-5 text-sm font-black text-[#421657]">
+                <h3 className="mt-5 text-sm font-black text-[#3E0014]">
                   {item.title}
                 </h3>
               </article>
@@ -499,7 +513,8 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-[#eadfec] bg-white px-8 py-12 text-center">
+      {/* ── Footer ── */}
+      <footer className="border-t border-[#EAD9EE] bg-white px-8 py-12 text-center">
         <div className="inline-flex items-center gap-3">
           <Image
             src="/figma-assets/image-7.png"
@@ -509,11 +524,11 @@ export default function Home() {
             loading="eager"
             className="h-10 w-10 object-contain"
           />
-          <span className="text-lg font-black text-[#421657]">
+          <span className="text-lg font-black text-[#3E0014]">
             Iara Plataforma
           </span>
         </div>
-        <p className="mt-5 text-sm text-[#6c7c96]">
+        <p className="mt-5 text-sm text-[#5B002C]/60">
           © 2026 Iara Platform. Mockup para demonstração.
         </p>
       </footer>

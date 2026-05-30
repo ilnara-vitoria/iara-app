@@ -18,13 +18,13 @@ export const Button = ({
 
   const variants = {
     primary:
-      "bg-[#421657] text-white hover:bg-[#56206a] shadow-sm",
+      "bg-[#AC1634] text-white hover:bg-[#8C1030] shadow-[0_8px_18px_rgba(172,22,52,0.28)]",
     secondary:
-      "bg-[#d64991] text-white hover:bg-[#c83b83] shadow-sm",
+      "bg-[#3E0014] text-white hover:bg-[#5B002C] shadow-sm",
     ghost:
-      "text-gray-500 hover:bg-gray-50 hover:text-gray-800",
+      "text-[#5B002C]/60 hover:bg-[#FFFBFC] hover:text-[#3E0014]",
     outline:
-      "border border-gray-200 text-gray-700 hover:bg-gray-50",
+      "border border-[#EAD9EE] text-[#3E0014] hover:bg-[#FFFBFC]",
   };
 
   const sizes = {
